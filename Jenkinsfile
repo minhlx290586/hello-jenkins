@@ -1,14 +1,23 @@
 pipeline {
     agent any
+    
     stages {
-        stage('Build') {
+        stage('Build image') {
             steps {
-                bat 'echo "Hello World"'
-                bat '''
-                    echo "Multiline shell steps works too"
-                '''
+                bat 'echo "Build image"'
+            }
+        }
+
+        stage('Push image') {
+            steps {
+                bat 'echo "Push image"'
+            }
+        }
+
+        stage('Deploy image') {
+            steps {
+                bat 'echo "Deploy image"'
             }
         }
     }
-    
 }
